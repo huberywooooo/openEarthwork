@@ -6,7 +6,7 @@ function contour_points = calc_bc(base, surface)
     %   contour_points - boundary points coordinates
     %   hull_x, hull_y - convex hull x and y coordinates
     %
-    %   openExcav: An Open Source Library for Excavation Calculation
+    %   openEarthwork: An Open Source Library for Excavation Calculation
     %   Author(s): Hubery H.B. Woo (hbw8456@163.com)
     %   Copyright 2009-2024 Chongqing Three Gorges University
 

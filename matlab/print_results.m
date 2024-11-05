@@ -3,7 +3,7 @@ function print_results(volume)
     % input:
     %   volume - struct with exca_volume, fill_volume, grid_volume
     %
-    %   openExcav: An Open Source Library for Excavation Calculation
+    %   openEarthwork: An Open Source Library for Excavation Calculation
     %   Author(s): Hubery H.B. Woo (hbw8456@163.com)
     %   Copyright 2009-2024 Chongqing Three Gorges University
 

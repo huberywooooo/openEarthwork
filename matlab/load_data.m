@@ -6,7 +6,7 @@ function data = load_data(filename, params)
     % output:
     %   data - struct with x, y, z coordinates
     %
-    %   openExcav: An Open Source Library for Excavation Calculation
+    %   openEarthwork: An Open Source Library for Excavation Calculation
     %   Author(s): Hubery H.B. Woo (hbw8456@163.com)
     %   Copyright 2009-2024 Chongqing Three Gorges University
 

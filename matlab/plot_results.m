@@ -6,7 +6,7 @@ function plot_results(base, surface, grid, contour_points, params)
     %   params - struct with contour_level
     %   contour_points - boundary points coordinates
     %
-    %   openExcav: An Open Source Library for Excavation Calculation
+    %   openEarthwork: An Open Source Library for Excavation Calculation
     %   Author(s): Hubery H.B. Woo (hbw8456@163.com)
     %   Copyright 2009-2024 Chongqing Three Gorges University
 

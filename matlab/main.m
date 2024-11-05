@@ -1,4 +1,4 @@
-%%%%-----------------------------openExcav--------------------------------------
+%%%%-----------------------------openEarthwork--------------------------------------
 %
 %       Description: Main function for calculating the volume of excavation
 %       function:
@@ -11,7 +11,7 @@
 %           calc_volume: calculate the volume of the excavation
 %           print_results: print the results
 %
-%   openExcav: An Open Source Library for Excavation Calculation
+%   openEarthwork: An Open Source Library for Excavation Calculation
 %   Author(s): Hubery H.B. Woo (hbw8456@163.com)
 %   Copyright 2009-2024 Chongqing Three Gorges University
 
@@ -44,6 +44,9 @@ plot_results(base, surface, gridd, contour_points, params);
 
 % calculate the volume
 volume = calc_volume(gridd, contour_points, params);
+
+% output the figure
+output_figure();
 
 % print the results
 print_results(volume);
