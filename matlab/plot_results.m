@@ -1,4 +1,4 @@
-function plot_results(base, surface, grid, params, contour_points)
+function plot_results(base, surface, grid, contour_points, params)
     % plot the results
     % input:
     %   base, surface - struct with x, y, z coordinates

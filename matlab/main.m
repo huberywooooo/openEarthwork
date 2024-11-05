@@ -22,15 +22,15 @@
 clear; clc; close all;
 
 % format the data
-% format_data('base.txt', 'base1.txt');
-% format_data('surface.txt', 'surface1.txt');
-% format_data('rockbase.txt', 'rockbase1.txt');
+format_data('base.txt', 'base1.txt');
+format_data('surface.txt', 'surface1.txt');
+format_data('rockbase.txt', 'rockbase1.txt');
 
 % set the parameters
 params = set_params();
 
 % load the data(base data have a offset)
-base = load_data('base.txt', 494400);
+base = load_data('base.txt', params);
 surface = load_data('surface.txt');
 
 % calculate the boundary
@@ -40,7 +40,7 @@ contour_points = calc_bc(base, surface);
 gridd = clac_grid(base, surface, params);
 
 % plot the results
-plot_results(base, surface, gridd, params, contour_points);
+plot_results(base, surface, gridd, contour_points, params);
 
 % calculate the volume
 volume = calc_volume(gridd, contour_points, params);

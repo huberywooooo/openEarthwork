@@ -1,14 +1,17 @@
-function data = load_data(filename, min_value)
+function data = load_data(filename, params)
     % load the data from the file and filter if needed
     % input:
     %   filename - data file name
-    %   min_value - minimum value (optional)
+    %   params - struct with min_value
     % output:
     %   data - struct with x, y, z coordinates
     %
     %   openExcav: An Open Source Library for Excavation Calculation
     %   Author(s): Hubery H.B. Woo (hbw8456@163.com)
     %   Copyright 2009-2024 Chongqing Three Gorges University
+
+    % extract the min_value
+    min_value = params.min_value;
 
     % read the data from the file
     fid = fopen(filename, 'r');
