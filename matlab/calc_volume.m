@@ -1,9 +1,10 @@
-function volume = calc_volume(gridd, contour_points, params)
+function volume = calc_volume(gridd, contour_points, params, output_file)
     % calculate the volume
     % input:
     %   gridd - struct with X, Y, Z_surface, Z_base
     %   params - struct with contour_level, grid_size
     %   contour_points - boundary points coordinates
+    %   output_file - path to output file for grid volumes
     % output:
     %   volume - struct with exca_volume, fill_volume, grid_volume
     %
@@ -31,6 +32,10 @@ function volume = calc_volume(gridd, contour_points, params)
     % plot the grid points
     plot(X, Y, 'k.', 'MarkerSize', 1);
     
+    % open output file for writing grid volumes
+    fid = fopen(output_file, 'w');
+    fprintf(fid, 'X,Y,Volume\n'); % write header
+    
     for i = 1:size(X, 1)
         for j = 1:size(X, 2)
             % check if the grid center is inside the boundary (the smaller the grid, the more accurate)
@@ -39,6 +44,9 @@ function volume = calc_volume(gridd, contour_points, params)
                     delta_z = Z_surface(i, j) - Z_base(i, j);
                     grid_area = grid_size^2;
                     current_volume = delta_z * grid_area;
+                    
+                    % write grid volume to file
+                    fprintf(fid, '%.3f,%.3f,%.3f\n', X(i,j), Y(i,j), current_volume);
                     
                     % calculate the total volume
                     if delta_z >= 0
@@ -53,6 +61,9 @@ function volume = calc_volume(gridd, contour_points, params)
             end
         end
     end
+    
+    % close the output file
+    fclose(fid);
     
     grid_volume = exca_volume - fill_volume;
     

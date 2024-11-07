@@ -10,8 +10,12 @@ function data = load_data(filename, params)
     %   Author(s): Hubery H.B. Woo (hbw8456@163.com)
     %   Copyright 2009-2024 Chongqing Three Gorges University
 
-    % extract the min_value
-    min_value = params.min_value;
+    % set the min_value, if not provided, set to 0
+    if nargin > 1
+        min_value = params.min_value;
+    else
+        min_value = 0;
+    end
 
     % read the data from the file
     fid = fopen(filename, 'r');
@@ -25,11 +29,9 @@ function data = load_data(filename, params)
     data.z = file_data{5};
     
     % if min_value is provided, filter the data
-    if nargin > 1
-        keep_indices = data.x >= min_value;
-        data.x = data.x(keep_indices);
-        data.y = data.y(keep_indices);
-        data.z = data.z(keep_indices);
-    end
+    keep_indices = data.x >= min_value;
+    data.x = data.x(keep_indices);
+    data.y = data.y(keep_indices);
+    data.z = data.z(keep_indices);
 
 end % function load_data

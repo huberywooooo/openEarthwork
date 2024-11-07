@@ -12,7 +12,7 @@ subroutine set_params(grid_size, contour_level)
     real, intent(out) :: grid_size, contour_level
     
     ! Set the parameters
-    grid_size = 5.0      ! grid size
-    contour_level = 5.0  ! contour level
+    grid_size = 10.0      ! grid size
+    contour_level = 10.0  ! contour level
 
 end subroutine set_params 

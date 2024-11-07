@@ -8,8 +8,8 @@ function params = set_params()
     %   Copyright 2009-2024 Chongqing Three Gorges University
 
     % set the parameters
-    params.grid_size = 100;        % grid size
-    params.contour_level = 5;    % contour level
+    params.grid_size = 10;        % grid size
+    params.contour_level = 10;    % contour level
     params.min_value = 494400;      % min_value of points
 
 end % function set_params
