@@ -23,7 +23,8 @@ function volume = calc_volume(gridd, contour_points, params, output_file)
     fill_volume = 0;
     
     % create a new figure for displaying the volume calculation results
-    subplot(2, 2, 4)
+    subplot(2, 2, 4);
+    title('volume calculation');
     hold on;
     
     % plot the boundary
@@ -71,6 +72,11 @@ function volume = calc_volume(gridd, contour_points, params, output_file)
     volume.exca_volume = exca_volume;
     volume.fill_volume = fill_volume;
     volume.grid_volume = grid_volume;
+
+    % show the volume calculation results in the figure
+    text(0.5, 0.5, sprintf('exca volume: %.2f\nfill volume: %.2f\ngrid volume: %.2f', ...
+        exca_volume, fill_volume, grid_volume), ...
+        'Units', 'normalized', 'VerticalAlignment', 'middle', 'HorizontalAlignment', 'center');
     
     % set the figure properties
     title('Volume Calculation Results');

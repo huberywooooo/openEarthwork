@@ -46,7 +46,7 @@ contour_points = calc_bc(surface, surface);
 % create the grid and interpolate
 gridd = clac_grid(base, surface, params);
 
-% plot the results
+    % plot the scatter points
 plot_results(base, surface, gridd, contour_points, params);
 
 % calculate the volume
