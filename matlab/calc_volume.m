@@ -88,6 +88,9 @@ function volume = calc_volume(gridd, contour_points, params, output_file)
     % add the legend
     legend('boundary', 'grid points', 'Location', 'best');
 
+    % output the figure
+    output_figure('volume.png');
+
 end % function calc_volume
 
 function add_label(x, y, volume)

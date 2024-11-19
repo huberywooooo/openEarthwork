@@ -14,5 +14,5 @@ function output_figure(filename)
 
     % output the figure
     print(filename, '-dpng', '-r300');
-
+    
 end % function output_figure

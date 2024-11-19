@@ -16,15 +16,15 @@
 %   Copyright 2009-2024 Chongqing Three Gorges University
 
 % add the working path of matlab
-% addpath
+addpath(genpath(pwd));
 
 % main function for calculating the volume of excavation
 clear; clc; close all;
 
 % format the data
-% format_data('base.txt', 'base1.txt');
-% format_data('surface.txt', 'surface1.txt');
-% format_data('rockbase.txt', 'rockbase1.txt');
+format_data('base.txt', 'base1.txt');
+format_data('surface.txt', 'surface1.txt');
+format_data('rockbase.txt', 'rockbase1.txt');
 
 %--------------------------------------------------------------------------
 %             P R E P R O C E S S 
@@ -46,17 +46,23 @@ contour_points = calc_bc(surface, surface);
 % create the grid and interpolate
 gridd = clac_grid(base, surface, params);
 
-    % plot the scatter points
+% plot the scatter points
 plot_results(base, surface, gridd, contour_points, params);
 
 % calculate the volume
-volume = calc_volume(gridd, contour_points, params, 'earthwork.txt');
+filename = 'earthwork.txt';
+volume = calc_volume(gridd, contour_points, params, filename);
 
 %--------------------------------------------------------------------------
 %             P O S T P R O C E S S 
 %--------------------------------------------------------------------------
 % output the figure
-output_figure('earthwork.png');
+filename = 'earthwork.png';
+output_figure(filename);
 
 % print the results
 print_results(volume);
+
+%--------------------------------------------------------------------------
+%             E N D   O F   P R O G R A M 
+%--------------------------------------------------------------------------

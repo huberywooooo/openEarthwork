@@ -29,13 +29,11 @@ function plot_results(base, surface, grid, contour_points, params)
     
     % surface contour
     subplot(2,2,2)
-    plot_surface(X, Y, Z_surface, x_surface, y_surface, contour_points, ...
-        contour_level);
+    plot_surface(X, Y, Z_surface, x_surface, y_surface, contour_points, contour_level);
     
     % base contour
     subplot(2,2,3)
-    plot_base(X, Y, Z_base, x_base, y_base, contour_points, ...
-        contour_level);
+    plot_base(X, Y, Z_base, x_base, y_base, contour_points, contour_level);
     
 end % function plot_results
 
@@ -45,26 +43,27 @@ function plot_points(x_surface, y_surface, x_base, y_base, contour_points)
     scatter(x_surface, y_surface, 'filled'); hold on;
     scatter(x_base, y_base, 'filled');
     plot(contour_points(:,1), contour_points(:,2), 'g-', 'LineWidth', 2);
-    title('scatter points');
+    title('Scatter points');
+
 end % function plotScatterPoints
 
 
-function plot_surface(X, Y, Z_surface, x_surface, y_surface, contour_points, ...
-    contour_level)
+function plot_surface(X, Y, Z_surface, x_surface, y_surface, contour_points, contour_level)
     % plot the surface contour
     contour(X, Y, Z_surface, contour_level, 'LineWidth', 1.5);
     hold on;
     scatter(x_surface, y_surface, 'filled');
     plot(contour_points(:,1), contour_points(:,2), 'g-', 'LineWidth', 2);
-    title('surface contour');
+    title('Surface contour');
+
 end % function plot_surface
 
-function plot_base(X, Y, Z_base, x_base, y_base, contour_points, ...
-    contour_level)
+function plot_base(X, Y, Z_base, x_base, y_base, contour_points, contour_level)
     % plot the base contour
     contour(X, Y, Z_base, contour_level, 'LineWidth', 1.5);
     hold on;
     scatter(x_base, y_base, 'filled');
     plot(contour_points(:,1), contour_points(:,2), 'g-', 'LineWidth', 2);
-    title( 'base contour');
+    title('Base contour');
+
 end % function plot_base
